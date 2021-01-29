@@ -1,0 +1,12 @@
+{
+    "txt_protocol": "http",
+    "txt_host": "localhost",
+    "int_port": 8000,
+    "txt_baseurl":"http://localhost",
+    "txt_version": "1.0.0",
+    "int_cache": 0,
+    "jsa_protect":[
+        "configs",
+        "sessions"
+    ]
+}

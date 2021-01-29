@@ -1,0 +1,51 @@
+package utility
+
+import (
+	"fmt"
+	"sync"
+
+	"github.com/SERV4BIZ/gfp/collection"
+	"github.com/SERV4BIZ/gfp/jsons"
+	"github.com/SERV4BIZ/letgo/global"
+)
+
+// MutexMapConfig is mutex lock for MapConfig
+var MutexMapConfig sync.RWMutex
+
+// MapConfig is map for config object
+var MapConfig *collection.MapKey = collection.MapKeyFactory()
+
+// GetConfig is get config json object
+func GetConfig(name string) (*jsons.JSONObject, error) {
+	var jsoConfig *jsons.JSONObject
+	var errConfig error
+
+	MutexMapConfig.RLock()
+	if MapConfig.HasKey(name) {
+		objConfig := MapConfig.Get(name)
+		if objConfig != nil {
+			jsoConfig, errConfig = objConfig.(*jsons.JSONObject).Copy()
+		}
+	}
+	MutexMapConfig.RUnlock()
+
+	if errConfig != nil {
+		return nil, errConfig
+	}
+
+	if jsoConfig != nil {
+		return jsoConfig, nil
+	}
+
+	MutexMapConfig.Lock()
+	pathfile := fmt.Sprint(GetAppDir(), global.DS, "configs", global.DS, name, ".json")
+	jsoConfig, errConfig = jsons.JSONObjectFromFile(pathfile)
+	MapConfig.Put(name, jsoConfig)
+	MutexMapConfig.Unlock()
+
+	if errConfig != nil {
+		return nil, errConfig
+	}
+
+	return jsoConfig.Copy()
+}
