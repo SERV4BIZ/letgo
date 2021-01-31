@@ -72,9 +72,17 @@ func Listen(port int) {
 		rep.Path = r.URL.Path
 		rep.SessionID = ""
 		rep.Session = jsons.JSONObjectFactory()
+
 		rep.Params = jsons.JSONObjectFactory()
+		rep.Get = rep.Params
+		rep.GET = rep.Params
+
 		rep.Post = jsons.JSONObjectFactory()
+		rep.POST = rep.Post
+
 		rep.File = jsons.JSONArrayFactory()
+		rep.FILE = rep.File
+
 		rep.MapAPI = collection.MapKeyFactory()
 		rep.Response = w
 		rep.Request = r

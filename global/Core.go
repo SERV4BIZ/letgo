@@ -22,10 +22,18 @@ type Request struct {
 	Path      string
 	SessionID string
 	Session   *jsons.JSONObject
-	Params    *jsons.JSONObject
-	Post      *jsons.JSONObject
-	File      *jsons.JSONArray
-	MapAPI    *collection.MapKey
+
+	Params *jsons.JSONObject
+	Get    *jsons.JSONObject
+	GET    *jsons.JSONObject
+
+	Post *jsons.JSONObject
+	POST *jsons.JSONObject
+
+	File *jsons.JSONArray
+	FILE *jsons.JSONArray
+
+	MapAPI *collection.MapKey
 
 	Response http.ResponseWriter
 	Request  *http.Request
