@@ -1,4 +1,4 @@
-package letgo
+package letgoapp
 
 import (
 	"github.com/SERV4BIZ/letgo/global"
