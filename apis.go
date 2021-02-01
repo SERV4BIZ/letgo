@@ -3,14 +3,14 @@
 
 	import(
 		"github.com/SERV4BIZ/letgo/global"
-		"github.com/SERV4BIZ/letgo/letgo"
+		"github.com/SERV4BIZ/letgo/letgoapp"
 
 		networks "./apis/networks"
 
 	)
 
 	func LetGoAPI() {
-		letgo.RegisterAPIHandler = func(rep *global.Request) {
+		letgoapp.RegisterAPIHandler = func(rep *global.Request) {
 			rep.AddAPI("networks/Ping",networks.Ping)
 
 		}
