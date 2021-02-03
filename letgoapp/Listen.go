@@ -75,7 +75,7 @@ func Listen(port int) {
 		rep.SESSION = jsons.ObjectNew()
 		rep.GET = jsons.ObjectNew()
 		rep.POST = jsons.ObjectNew()
-		rep.FILE = jsons.ObjectNew()
+		rep.FILE = jsons.ArrayNew()
 
 		rep.MapAPI = collection.MapKeyFactory()
 		rep.Response = w
