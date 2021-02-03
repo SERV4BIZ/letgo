@@ -26,12 +26,12 @@ var CustomSessionIDHandler interface{} = func(rep *global.Request) {
 var LoadSessionHandler interface{} = func(rep *global.Request) {
 	filename := fmt.Sprint(rep.SessionID, ".session")
 	pathfile := fmt.Sprint(utility.GetAppDir(), global.DS, "sessions", global.DS, filename)
-	rep.Session.FromFile(pathfile)
+	rep.SESSION.FromFile(pathfile)
 }
 
 // SaveSessionHandler is flush session of all request
 var SaveSessionHandler interface{} = func(rep *global.Request) {
 	filename := fmt.Sprint(rep.SessionID, ".session")
 	pathfile := fmt.Sprint(utility.GetAppDir(), global.DS, "sessions", global.DS, filename)
-	rep.Session.ToFile(pathfile)
+	rep.SESSION.ToFile(pathfile)
 }

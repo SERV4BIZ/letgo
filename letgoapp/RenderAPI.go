@@ -25,7 +25,7 @@ func RenderAPI(rep *global.Request) {
 	if strings.ToLower(params[1]) == "api" {
 		if rep.Request.Method == "POST" {
 			InitSession(rep)
-			InitParamsAPI(rep)
+			InitGetAPI(rep)
 			InitPostAPI(rep)
 			InitPostMultipartAPI(rep)
 			regisapi := RegisterAPIHandler.(func(rep *global.Request))
@@ -44,7 +44,7 @@ func RenderAPI(rep *global.Request) {
 			}
 			FlushSession(rep)
 		} else if rep.Request.Method == "GET" {
-			InitParamsAPI(rep)
+			InitGetAPI(rep)
 			regisapi := RegisterAPIHandler.(func(rep *global.Request))
 			regisapi(rep)
 

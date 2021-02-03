@@ -6,6 +6,7 @@ import (
 
 	"github.com/SERV4BIZ/gfp/files"
 	"github.com/SERV4BIZ/gfp/jsons"
+	"github.com/SERV4BIZ/letgo/letgoapp"
 	"github.com/SERV4BIZ/letgo/utility"
 )
 
@@ -124,6 +125,6 @@ func main() {
 	fmt.Println(fmt.Sprint(ProjectName, " Finished"))
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 
-	//LetGoAPI()
-	//letgo.Listen(0)
+	LetGoAPI()
+	letgoapp.Listen(0)
 }

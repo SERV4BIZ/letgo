@@ -8,9 +8,9 @@ func InitPostAPI(rep *global.Request) {
 	if err == nil {
 		for key, val := range rep.Request.PostForm {
 			if len(val) > 1 {
-				rep.Post.GetObjectData().Put(key, val)
+				rep.POST.GetObjectData().Put(key, val)
 			} else {
-				rep.Post.GetObjectData().Put(key, val[0])
+				rep.POST.GetObjectData().Put(key, val[0])
 			}
 		}
 	}
