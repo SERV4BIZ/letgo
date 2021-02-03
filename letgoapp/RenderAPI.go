@@ -31,7 +31,7 @@ func RenderAPI(rep *global.Request) {
 			regisapi := RegisterAPIHandler.(func(rep *global.Request))
 			regisapi(rep)
 
-			path := rep.Params.GetString("path")
+			path := rep.GET.GetString("path")
 			api := rep.GetAPI(path)
 			if api != nil {
 				rep.Response.Header().Set("Content-Type", "application/json")
@@ -48,7 +48,7 @@ func RenderAPI(rep *global.Request) {
 			regisapi := RegisterAPIHandler.(func(rep *global.Request))
 			regisapi(rep)
 
-			path := rep.Params.GetString("path")
+			path := rep.GET.GetString("path")
 			api := rep.GetAPI(path)
 			if api != nil {
 				rep.Response.Header().Set("Content-Type", "application/json")
