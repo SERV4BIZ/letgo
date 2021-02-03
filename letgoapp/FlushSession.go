@@ -1,6 +1,6 @@
 package letgoapp
 
-import "./global"
+import "github.com/SERV4BIZ/letgo/global"
 
 // FlushSession is save session to file
 func FlushSession(rep *global.Request) {
