@@ -81,8 +81,8 @@ const SessionName string = "LETGO_SESSION_ID"
 // DS is separator of directory
 const DS string = "/"
 
-// MaxMemoryMultipart is Max memory 100MB
-const MaxMemoryMultipart int64 = 100 * 1024 * 1024
+// MaxMemoryMultipart is Max memory 1024MB
+const MaxMemoryMultipart int64 = 1024 * 1024 * 1024
 
 // MaxSessionExpire is Max expire of session
 const MaxSessionExpire time.Duration = 24 * 365 * time.Hour
