@@ -29,6 +29,7 @@ func GetConfig(name string) (*jsons.JSONObject, error) {
 	}
 	MutexMapConfig.RUnlock()
 
+	if errConfig != nil {
 		return nil, errConfig
 	}
 
