@@ -17,8 +17,8 @@ var MapConfig *collection.MapKey = collection.MapKeyFactory()
 
 // GetConfig is get config json object
 func GetConfig(name string) (*jsons.JSONObject, error) {
-	var jsoConfig *jsons.JSONObject
-	var errConfig error
+	var jsoConfig *jsons.JSONObject = nil
+	var errConfig error = nil
 
 	MutexMapConfig.RLock()
 	if MapConfig.HasKey(name) {
