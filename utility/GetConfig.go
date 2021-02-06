@@ -29,8 +29,6 @@ func GetConfig(name string) (*jsons.JSONObject, error) {
 	}
 	MutexMapConfig.RUnlock()
 
-	
-	if errConfig != nil {
 		return nil, errConfig
 	}
 
@@ -41,12 +39,13 @@ func GetConfig(name string) (*jsons.JSONObject, error) {
 	MutexMapConfig.Lock()
 	pathfile := fmt.Sprint(GetAppDir(), global.DS, "configs", global.DS, name, ".json")
 	jsoConfig, errConfig = jsons.JSONObjectFromFile(pathfile)
-	MapConfig.Put(name, jsoConfig)
+	if errConfig == nil {
+		MapConfig.Put(name, jsoConfig)
+	}
 	MutexMapConfig.Unlock()
 
 	if errConfig != nil {
 		return nil, errConfig
 	}
-
 	return jsoConfig.Copy()
 }
