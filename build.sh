@@ -6,6 +6,8 @@ NAMEFREEBSD="letgo.freebsd"
 NAMEWINDOWS="letgo.windows"
 NAMEDARWIN="letgo.darwin"
 
+export GO111MODULE=auto
+
 rm -f $NAMEARM
 export GOOS=linux
 export GOARCH=arm64

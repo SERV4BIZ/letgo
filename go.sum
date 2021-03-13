@@ -4,3 +4,9 @@ github.com/SERV4BIZ/gfp/files v0.0.0-20210302062410-766954048867 h1:Ii4MxMkvoTYK
 github.com/SERV4BIZ/gfp/files v0.0.0-20210302062410-766954048867/go.mod h1:ZDFxg0rNOeNT/uGGvG2YQ395F6x9yQd5rV6RR0Rjkfg=
 github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867 h1:JCbjyrFOcIkVlkoSoq/P1tdh/gPkPy2U7tVcnBySck8=
 github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867/go.mod h1:3tIMUd3nUCI3CD15dkNb1FiiCrEPjdRHoIcafHyMkNc=
+github.com/SERV4BIZ/letgo/utility v0.0.0-20210313072454-79bd41fbf684 h1:ml/rG7PbSgx2ddOrerc5ZCc9iBenyuqe8pWhfUJFszg=
+github.com/SERV4BIZ/letgo/utility v0.0.0-20210313072454-79bd41fbf684/go.mod h1:zfuCMmj7IsWRCMmCUN4RgU9EFP4ink1erhyHVofHLUA=
+github.com/tdewolff/minify v2.3.6+incompatible h1:2hw5/9ZvxhWLvBUnHE06gElGYz+Jv9R4Eys0XUzItYo=
+github.com/tdewolff/minify v2.3.6+incompatible/go.mod h1:9Ov578KJUmAWpS6NeZwRZyT56Uf6o3Mcz9CEsg8USYs=
+github.com/tdewolff/parse v2.3.4+incompatible h1:x05/cnGwIMf4ceLuDMBOdQ1qGniMoxpP46ghf0Qzh38=
+github.com/tdewolff/parse v2.3.4+incompatible/go.mod h1:8oBwCsVmUkgHO8M5iCzSIDtpzXOT0WXX9cWhz+bIzJQ=

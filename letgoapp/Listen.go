@@ -50,10 +50,9 @@ func Listen(port int) {
 	}
 
 	maxSession := JSOConfig.GetInt("int_maxsession") 
-	if maxSession > 0{
+	if maxSession > 0 {
 		global.MaxSession = maxSession * time.Minute
-	}
-	else {
+	} else {
 		// Default max session 30 minute
 		global.MaxSession = 30 * time.Minute
 	}
