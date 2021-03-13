@@ -5,6 +5,8 @@
     "txt_baseurl":"http://localhost",
     "txt_version": "1.0.0",
     "int_cache": 0,
+    "int_maxread":1073741824,
+    "int_maxsession":30,
     "jsa_protect":[
         "configs",
         "sessions"

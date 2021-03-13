@@ -32,7 +32,7 @@ func Listen(port int) {
 	}
 	exts := jsoMimetype.GetKeys()
 	for _, extName := range exts {
-		global.MapMimeType[extName] = jsoMimetype.GetString(extName)
+		global.MapMimeType[extName] = strings.ToLower(jsoMimetype.GetString(extName))
 	}
 
 	pathApp := utility.GetAppDir()
@@ -43,6 +43,22 @@ func Listen(port int) {
 		global.ListProtect = append(global.ListProtect, pathProtect)
 	}
 
+	global.MaxRead = JSOConfig.GetInt("int_maxread")
+	if global.MaxRead <= 0 {
+		// Default max reader is 1024MB or 1GB
+		global.MaxRead = 1024 * 1024 * 1024
+	}
+
+	maxSession := JSOConfig.GetInt("int_maxsession") 
+	if maxSession > 0{
+		global.MaxSession = maxSession * time.Minute
+	}
+	else {
+		// Default max session 30 minute
+		global.MaxSession = 30 * time.Minute
+	}
+
+	// Load and Memory Monitor
 	go func() {
 		for {
 			var m runtime.MemStats
@@ -58,12 +74,20 @@ func Listen(port int) {
 		}
 	}()
 
+	// Force GC to clear up
+	go func() {
+		for {
+			<-time.After(time.Hour)
+			runtime.GC()
+		}
+	}()
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		global.MutexState.Lock()
 		global.CountState++
 		global.MutexState.Unlock()
 
-		r.Body = http.MaxBytesReader(w, r.Body, global.MaxMemoryMultipart)
+		r.Body = http.MaxBytesReader(w, r.Body, global.MaxRead)
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")

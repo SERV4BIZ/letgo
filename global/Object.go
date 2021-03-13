@@ -81,11 +81,11 @@ const SessionName string = "LETGO_SESSION_ID"
 // DS is separator of directory
 const DS string = "/"
 
-// MaxMemoryMultipart is Max memory 1024MB
-const MaxMemoryMultipart int64 = 1024 * 1024 * 1024
+// MaxRead is Max MultiPart of body in request
+var MaxRead int = 0
 
-// MaxSessionExpire is Max expire of session
-const MaxSessionExpire time.Duration = 24 * 365 * time.Hour
+// MaxSession is Max expire of session
+var MaxSession time.Duration = 30 * time.Minute
 
 // IsCacheWork is enable cache work
 var IsCacheWork bool = false
