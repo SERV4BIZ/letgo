@@ -1,0 +1,11 @@
+github.com/SERV4BIZ/gfp/collection v0.0.0-20210302062410-766954048867 h1:06pFg2A36nC1GDXQR8Ercs7hbhHpOjzNHNuJwbKNQg4=
+github.com/SERV4BIZ/gfp/collection v0.0.0-20210302062410-766954048867/go.mod h1:q5gv++CP8OOYitARxvTn7w78B5KSdsRbfZNJP5hukVk=
+github.com/SERV4BIZ/gfp/files v0.0.0-20210302062410-766954048867 h1:Ii4MxMkvoTYKisDFEjSSbiZXFPuzkapZMo5HkNBwTTQ=
+github.com/SERV4BIZ/gfp/files v0.0.0-20210302062410-766954048867/go.mod h1:ZDFxg0rNOeNT/uGGvG2YQ395F6x9yQd5rV6RR0Rjkfg=
+github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867 h1:JCbjyrFOcIkVlkoSoq/P1tdh/gPkPy2U7tVcnBySck8=
+github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867/go.mod h1:3tIMUd3nUCI3CD15dkNb1FiiCrEPjdRHoIcafHyMkNc=
+github.com/SERV4BIZ/letgo v0.0.0-20210313074821-431a5878808f h1:DQYSAhXCDMNaOMD/csSDykAz26E0QsLdcq9p3Xw5E0k=
+github.com/SERV4BIZ/letgo v0.0.0-20210313074821-431a5878808f/go.mod h1:p7lmsOPzMRmz4B9QsfjCwT92AMzXtge8xyy31xsbsMY=
+github.com/SERV4BIZ/letgo/utility v0.0.0-20210313072454-79bd41fbf684/go.mod h1:zfuCMmj7IsWRCMmCUN4RgU9EFP4ink1erhyHVofHLUA=
+github.com/tdewolff/minify v2.3.6+incompatible/go.mod h1:9Ov578KJUmAWpS6NeZwRZyT56Uf6o3Mcz9CEsg8USYs=
+github.com/tdewolff/parse v2.3.4+incompatible/go.mod h1:8oBwCsVmUkgHO8M5iCzSIDtpzXOT0WXX9cWhz+bIzJQ=

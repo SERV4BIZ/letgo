@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os/exec"
 	"strings"
 
 	"github.com/SERV4BIZ/gfp/files"
@@ -18,15 +19,15 @@ func ScanDir(folder string) *jsons.JSONArray {
 	filedirs, errScan := files.ScanDir(folder)
 	if errScan == nil {
 		for _, val := range filedirs {
-			if val != ".DS_Store" && val != "code.js" && val != "view.html" && val != "style.css" {
-				pathFile := fmt.Sprint(folder, "/", val)
-				if files.IsFile(pathFile) {
+			pathFile := fmt.Sprint(folder, "/", val)
+			if files.IsFile(pathFile) {
+				if strings.HasSuffix(strings.ToLower(val), ".go") {
 					jsaResult.PutString(pathFile)
-				} else {
-					jsaList := ScanDir(pathFile)
-					for i := 0; i < jsaList.Length(); i++ {
-						jsaResult.PutString(jsaList.GetString(i))
-					}
+				}
+			} else {
+				jsaList := ScanDir(pathFile)
+				for i := 0; i < jsaList.Length(); i++ {
+					jsaResult.PutString(jsaList.GetString(i))
 				}
 			}
 		}
@@ -59,6 +60,17 @@ func main() {
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 	fmt.Println(fmt.Sprint("Directory : ", utility.GetAppDir()))
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+
+	pathModfile := fmt.Sprint(utility.GetAppDir(), "/go.mod")
+	if !files.ExistFile(pathModfile) {
+		panic("Not found go.mod file")
+	}
+	modBuff, errMod := files.ReadFile(pathModfile)
+	if errMod != nil {
+		panic(errMod)
+	}
+	txtModBuff := string(modBuff)
+	moduleName := strings.ReplaceAll(strings.Split(txtModBuff, "\n")[0], "module ", "")
 
 	jsaListing := APIListing(APIDIR)
 
@@ -94,7 +106,24 @@ func main() {
 
 	txtImportBuffer := ""
 	for keyName := range mapPathImport {
-		txtImportBuffer = fmt.Sprint(txtImportBuffer, mapPathImport[keyName], " \"./", APIDIR, "/", keyName, "\"\n")
+		pathPackage := fmt.Sprint(moduleName, "/", APIDIR, "/", keyName)
+		txtImportBuffer = fmt.Sprint(txtImportBuffer, mapPathImport[keyName], " \"", pathPackage, "\"\n")
+
+		// Init module and tidy and get
+		// init
+		cmd := exec.Command("go", "mod", "init", pathPackage)
+		cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
+		cmd.Run()
+
+		// tidy
+		cmd = exec.Command("go", "mod", "tidy")
+		cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
+		cmd.Run()
+
+		// get
+		cmd = exec.Command("go", "get", pathPackage)
+		cmd.Run()
+		// end
 	}
 
 	txtAddAPIBuffer := ""
