@@ -12,7 +12,7 @@ func InitSession(rep *global.Request) string {
 	cookie, err := rep.Request.Cookie(global.SessionName)
 	if err != nil {
 		CustomSessionIDHandler.(func(rep *global.Request))(rep)
-		expiration := time.Now().Add(global.MaxSessionExpire)
+		expiration := time.Now().Add(global.MaxSession)
 		cookie = &http.Cookie{Name: global.SessionName, Value: rep.SessionID, Expires: expiration, Path: "/"}
 		http.SetCookie(rep.Response, cookie)
 	}

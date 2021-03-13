@@ -43,15 +43,15 @@ func Listen(port int) {
 		global.ListProtect = append(global.ListProtect, pathProtect)
 	}
 
-	global.MaxRead = JSOConfig.GetInt("int_maxread")
+	global.MaxRead = jsoConfig.GetInt("int_maxread")
 	if global.MaxRead <= 0 {
 		// Default max reader is 1024MB or 1GB
 		global.MaxRead = 1024 * 1024 * 1024
 	}
 
-	maxSession := JSOConfig.GetInt("int_maxsession") 
+	maxSession := jsoConfig.GetInt("int_maxsession")
 	if maxSession > 0 {
-		global.MaxSession = maxSession * time.Minute
+		global.MaxSession = time.Duration(maxSession) * time.Minute
 	} else {
 		// Default max session 30 minute
 		global.MaxSession = 30 * time.Minute
@@ -86,7 +86,7 @@ func Listen(port int) {
 		global.CountState++
 		global.MutexState.Unlock()
 
-		r.Body = http.MaxBytesReader(w, r.Body, global.MaxRead)
+		r.Body = http.MaxBytesReader(w, r.Body, int64(global.MaxRead))
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")

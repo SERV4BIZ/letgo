@@ -4,7 +4,7 @@ import "github.com/SERV4BIZ/letgo/global"
 
 // InitPostMultipartAPI is load post multipart form for api
 func InitPostMultipartAPI(rep *global.Request) {
-	err := rep.Request.ParseMultipartForm(global.MaxMemoryMultipart)
+	err := rep.Request.ParseMultipartForm(int64(global.MaxRead))
 	if err == nil {
 		for key, val := range rep.Request.PostForm {
 			if len(val) > 1 {
