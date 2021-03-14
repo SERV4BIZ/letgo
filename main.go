@@ -105,7 +105,7 @@ func main() {
 	}
 
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
-	fmt.Println(fmt.Sprint("Init module all API"))
+	fmt.Println(fmt.Sprint("Initial Module All API"))
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 
 	txtImportBuffer := ""
@@ -121,13 +121,13 @@ func main() {
 		cmd.Run()
 
 		// tidy
-		cmd = exec.Command("go", "mod", "tidy")
+		/*cmd = exec.Command("go", "mod", "tidy")
 		cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
-		cmd.Run()
+		cmd.Run()*/
 
 		// get
-		cmd = exec.Command("go", "get", pathPackage)
-		cmd.Run()
+		/*cmd = exec.Command("go", "get", pathPackage)
+		cmd.Run()*/
 
 		// replace to local
 		cmd = exec.Command("go", "mod", "edit", "-replace", fmt.Sprint(pathPackage, "=", "./apis/", keyName))
