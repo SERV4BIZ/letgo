@@ -9,8 +9,11 @@ github.com/SERV4BIZ/gfp/hash v0.0.0-20210302062410-766954048867 h1:JqFWAfW+tUhwf
 github.com/SERV4BIZ/gfp/hash v0.0.0-20210302062410-766954048867/go.mod h1:M7WHQ52vy1mnQxDdrJkuealVxHcgKDHqAoBsJwmjt00=
 github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867 h1:JCbjyrFOcIkVlkoSoq/P1tdh/gPkPy2U7tVcnBySck8=
 github.com/SERV4BIZ/gfp/jsons v0.0.0-20210302062410-766954048867/go.mod h1:3tIMUd3nUCI3CD15dkNb1FiiCrEPjdRHoIcafHyMkNc=
+github.com/SERV4BIZ/letgo v0.0.0-20210313074821-431a5878808f/go.mod h1:p7lmsOPzMRmz4B9QsfjCwT92AMzXtge8xyy31xsbsMY=
 github.com/SERV4BIZ/letgo/apis/networks v0.0.0-20210313074821-431a5878808f h1:FIUgiCcZ2A7VWFC/G8xT82Fqcm0eLSs1i4pa8gNQ3cI=
 github.com/SERV4BIZ/letgo/apis/networks v0.0.0-20210313074821-431a5878808f/go.mod h1:LLm3jSI/DbEt8dPm0v1wSwB7hNWiVxYkfR+kz63RLEA=
+github.com/SERV4BIZ/letgo/apis/networks v0.0.0-20210313170658-6549b6bb41b6 h1:ON4gZ2CpY/ldVjy4iEGajqe9LJwcfx1AW5mZpooItmA=
+github.com/SERV4BIZ/letgo/apis/networks v0.0.0-20210313170658-6549b6bb41b6/go.mod h1:g4YhHUgWUrds9MHge88sbLJ276PP8sPaw+VwjfUfjmU=
 github.com/SERV4BIZ/letgo/letgoapp v0.0.0-20210313074821-431a5878808f h1:5GopcSDdBCkIrUS53n5q13D87pToFpz4OxJHL971Gd4=
 github.com/SERV4BIZ/letgo/letgoapp v0.0.0-20210313074821-431a5878808f/go.mod h1:VasUQ5zATgE1xxo+tKjBdZ7RmBX1J0ENxcI+arr0dbo=
 github.com/SERV4BIZ/letgo/utility v0.0.0-20210313072454-79bd41fbf684 h1:ml/rG7PbSgx2ddOrerc5ZCc9iBenyuqe8pWhfUJFszg=
