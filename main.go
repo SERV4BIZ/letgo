@@ -104,9 +104,9 @@ func main() {
 		jsaPathAPI.PutString(fmt.Sprint("rep.AddAPI(\"", txtPathAPI, "\",", txtObjectName, ")"))
 	}
 
-	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
-	fmt.Println(fmt.Sprint("Initial Module All API"))
-	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+	//fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+	//fmt.Println(fmt.Sprint("Initial Module All API"))
+	//fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 
 	txtImportBuffer := ""
 	for keyName := range mapPathImport {
@@ -114,7 +114,7 @@ func main() {
 		txtImportBuffer = fmt.Sprint(txtImportBuffer, mapPathImport[keyName], " \"", pathPackage, "\"\n")
 
 		// Init module and tidy and get
-		fmt.Println(pathPackage)
+		//fmt.Println(pathPackage)
 		// init
 		//cmd := exec.Command("go", "mod", "init", pathPackage)
 		//cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
