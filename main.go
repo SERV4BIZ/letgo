@@ -123,6 +123,11 @@ func main() {
 		// get
 		cmd = exec.Command("go", "get", pathPackage)
 		cmd.Run()
+
+		// replace to local
+		cmd = exec.Command("go", "mod", "edit", "-replace", fmt.Sprint(pathPackage, "=", "./apis/", keyName))
+		cmd.Dir = fmt.Sprint(APIDIR)
+		cmd.Run()
 		// end
 	}
 
