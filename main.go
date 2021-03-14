@@ -104,12 +104,17 @@ func main() {
 		jsaPathAPI.PutString(fmt.Sprint("rep.AddAPI(\"", txtPathAPI, "\",", txtObjectName, ")"))
 	}
 
+	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+	fmt.Println(fmt.Sprint("Init module all API"))
+	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+
 	txtImportBuffer := ""
 	for keyName := range mapPathImport {
 		pathPackage := fmt.Sprint(moduleName, "/", APIDIR, "/", keyName)
 		txtImportBuffer = fmt.Sprint(txtImportBuffer, mapPathImport[keyName], " \"", pathPackage, "\"\n")
 
 		// Init module and tidy and get
+		fmt.Println(pathPackage)
 		// init
 		cmd := exec.Command("go", "mod", "init", pathPackage)
 		cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
@@ -154,6 +159,12 @@ func main() {
 
 	pathFile := fmt.Sprint(utility.GetAppDir(), "/apis.go")
 	files.WriteFile(pathFile, []byte(codeBuffer))
+
+	// project base module tidy
+	cmd := exec.Command("go", "mod", "tidy")
+	cmd.Dir = fmt.Sprint(utility.GetAppDir())
+	cmd.Run()
+
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 	fmt.Println(fmt.Sprint(ProjectName, " Finished"))
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
