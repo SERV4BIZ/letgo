@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os/exec"
+
 	"strings"
 
 	"github.com/SERV4BIZ/gfp/files"
@@ -116,9 +116,9 @@ func main() {
 		// Init module and tidy and get
 		fmt.Println(pathPackage)
 		// init
-		cmd := exec.Command("go", "mod", "init", pathPackage)
-		cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
-		cmd.Run()
+		//cmd := exec.Command("go", "mod", "init", pathPackage)
+		//cmd.Dir = fmt.Sprint(APIDIR, "/", keyName)
+		//cmd.Run()
 
 		// tidy
 		/*cmd = exec.Command("go", "mod", "tidy")
@@ -130,9 +130,9 @@ func main() {
 		cmd.Run()*/
 
 		// replace to local
-		cmd = exec.Command("go", "mod", "edit", "-replace", fmt.Sprint(pathPackage, "=", "./apis/", keyName))
-		cmd.Dir = fmt.Sprint(APIDIR)
-		cmd.Run()
+		//cmd = exec.Command("go", "mod", "edit", "-replace", fmt.Sprint(pathPackage, "=", "./apis/", keyName))
+		//cmd.Dir = fmt.Sprint(APIDIR)
+		//cmd.Run()
 		// end
 	}
 
@@ -161,9 +161,9 @@ func main() {
 	files.WriteFile(pathFile, []byte(codeBuffer))
 
 	// project base module tidy
-	cmd := exec.Command("go", "mod", "tidy")
-	cmd.Dir = fmt.Sprint(utility.GetAppDir())
-	cmd.Run()
+	//cmd := exec.Command("go", "mod", "tidy")
+	//cmd.Dir = fmt.Sprint(utility.GetAppDir())
+	//cmd.Run()
 
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 	fmt.Println(fmt.Sprint(ProjectName, " Finished"))
