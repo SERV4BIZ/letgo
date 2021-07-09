@@ -1,15 +1,17 @@
-package main
 
-import (
-	"github.com/SERV4BIZ/letsgo/global"
-	"github.com/SERV4BIZ/letsgo/letsgoapp"
+	package main
 
-	networks "github.com/SERV4BIZ/letsgo/apis/networks"
-)
+	import(
+		"github.com/SERV4BIZ/letsgo/global"
+		"github.com/SERV4BIZ/letsgo/letsgoapp"
 
-func letsgoAPI() {
-	letsgoapp.RegisterAPIHandler = func(rep *global.Request) {
-		rep.AddAPI("networks/Ping", networks.Ping)
+		networks "github.com/SERV4BIZ/letsgo/apis/networks"
 
+	)
+
+	func letsgoAPI() {
+		letsgoapp.RegisterAPIHandler = func(rep *global.Request) {
+			rep.AddAPI("networks/Ping",networks.Ping)
+
+		}
 	}
-}
