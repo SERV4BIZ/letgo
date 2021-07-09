@@ -6,7 +6,7 @@ import (
 
 	"github.com/SERV4BIZ/gfp/collection"
 	"github.com/SERV4BIZ/gfp/jsons"
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 // MutexMapConfig is mutex lock for MapConfig

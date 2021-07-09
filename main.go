@@ -7,7 +7,7 @@ import (
 
 	"github.com/SERV4BIZ/gfp/files"
 	"github.com/SERV4BIZ/gfp/jsons"
-	"github.com/SERV4BIZ/letgo/utility"
+	"github.com/SERV4BIZ/letsgo/utility"
 )
 
 // APIDIR is path of folder apis
@@ -50,7 +50,7 @@ func APIListing(folder string) *jsons.JSONArray {
 }
 
 func main() {
-	ProjectName := "LetGo Compiler"
+	ProjectName := "Lets Go Compiler"
 	ProjectVersion := "1.0.0"
 	CompanyName := "SERV4BIZ CO.,LTD."
 
@@ -145,14 +145,14 @@ func main() {
 	package main
 
 	import(
-		"github.com/SERV4BIZ/letgo/global"
-		"github.com/SERV4BIZ/letgo/letgoapp"
+		"github.com/SERV4BIZ/letsgo/global"
+		"github.com/SERV4BIZ/letsgo/letsgoapp"
 
 		` + txtImportBuffer + `
 	)
 
-	func LetGoAPI() {
-		letgoapp.RegisterAPIHandler = func(rep *global.Request) {
+	func letsgoAPI() {
+		letsgoapp.RegisterAPIHandler = func(rep *global.Request) {
 			` + txtAddAPIBuffer + `
 		}
 	}`
@@ -169,6 +169,6 @@ func main() {
 	fmt.Println(fmt.Sprint(ProjectName, " Finished"))
 	fmt.Println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
 
-	//LetGoAPI()
-	//letgoapp.Listen(0)
+	//letsgoAPI()
+	//letsgoapp.Listen(0)
 }

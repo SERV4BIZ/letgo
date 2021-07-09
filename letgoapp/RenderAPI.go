@@ -1,4 +1,4 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 
 	"github.com/SERV4BIZ/gfp/files"
 	"github.com/SERV4BIZ/gfp/jsons"
-	"github.com/SERV4BIZ/letgo/global"
-	"github.com/SERV4BIZ/letgo/utility"
+	"github.com/SERV4BIZ/letsgo/global"
+	"github.com/SERV4BIZ/letsgo/utility"
 )
 
 // APINotFound is render api not found

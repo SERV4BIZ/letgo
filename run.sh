@@ -1,6 +1,6 @@
 #!/bin/sh
 
-RUNNAME="letgo.darwin"
+RUNNAME="letsgo.darwin"
 
 clear
 ./build.sh

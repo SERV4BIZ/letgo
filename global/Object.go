@@ -76,7 +76,7 @@ func (me *Request) GetAPI(path string) func(rep *Request) *jsons.JSONObject {
 }
 
 // SessionName is session name
-const SessionName string = "LETGO_SESSION_ID"
+const SessionName string = "letsgo_SESSION_ID"
 
 // DS is separator of directory
 const DS string = "/"

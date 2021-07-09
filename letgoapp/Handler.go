@@ -1,4 +1,4 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 
 	"github.com/SERV4BIZ/gfp/hash"
 	"github.com/SERV4BIZ/gfp/uuid"
-	"github.com/SERV4BIZ/letgo/global"
-	"github.com/SERV4BIZ/letgo/utility"
+	"github.com/SERV4BIZ/letsgo/global"
+	"github.com/SERV4BIZ/letsgo/utility"
 )
 
 // RegisterAPIHandler is variable api all method

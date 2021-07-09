@@ -1,10 +1,10 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"net/http"
 	"time"
 
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 // InitSession is load session first

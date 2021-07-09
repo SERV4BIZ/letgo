@@ -1,6 +1,6 @@
-package letgoapp
+package letsgoapp
 
-import "github.com/SERV4BIZ/letgo/global"
+import "github.com/SERV4BIZ/letsgo/global"
 
 // InitPostMultipartAPI is load post multipart form for api
 func InitPostMultipartAPI(rep *global.Request) {

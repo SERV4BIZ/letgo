@@ -1,6 +1,6 @@
-package letgoapp
+package letsgoapp
 
-import "github.com/SERV4BIZ/letgo/global"
+import "github.com/SERV4BIZ/letsgo/global"
 
 // InitPostAPI is load post from for api
 func InitPostAPI(rep *global.Request) {

@@ -3,7 +3,7 @@ package utility
 import (
 	"errors"
 
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 // MimeType is set header type for response

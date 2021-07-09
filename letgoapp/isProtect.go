@@ -1,9 +1,9 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"strings"
 
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 func isProtect(pathFile string) bool {

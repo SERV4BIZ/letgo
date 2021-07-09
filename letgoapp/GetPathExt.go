@@ -1,4 +1,4 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"strings"

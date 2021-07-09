@@ -1,10 +1,10 @@
 #!/bin/sh
 
-NAMEARM="letgo.arm"
-NAMELINUX="letgo.linux"
-NAMEFREEBSD="letgo.freebsd"
-NAMEWINDOWS="letgo.windows"
-NAMEDARWIN="letgo.darwin"
+NAMEARM="letsgo.arm"
+NAMELINUX="letsgo.linux"
+NAMEFREEBSD="letsgo.freebsd"
+NAMEWINDOWS="letsgo.windows"
+NAMEDARWIN="letsgo.darwin"
 
 export GO111MODULE=auto
 

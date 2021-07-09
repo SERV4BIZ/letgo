@@ -2,7 +2,7 @@ package networks
 
 import (
 	"github.com/SERV4BIZ/gfp/jsons"
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 // Ping is check network

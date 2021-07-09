@@ -1,8 +1,8 @@
-package letgoapp
+package letsgoapp
 
 import (
-	"github.com/SERV4BIZ/letgo/global"
-	"github.com/SERV4BIZ/letgo/utility"
+	"github.com/SERV4BIZ/letsgo/global"
+	"github.com/SERV4BIZ/letsgo/utility"
 )
 
 // SetMimeType is set header type for response

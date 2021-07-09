@@ -1,10 +1,10 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"fmt"
 	"strings"
 
-	"github.com/SERV4BIZ/letgo/global"
+	"github.com/SERV4BIZ/letsgo/global"
 )
 
 // InitGetAPI is load parameter for api path

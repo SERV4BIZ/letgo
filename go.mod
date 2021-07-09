@@ -1,8 +1,8 @@
-module github.com/SERV4BIZ/letgo
+module github.com/SERV4BIZ/letsgo
 
 go 1.16
 
-replace github.com/SERV4BIZ/letgo => ./
+replace github.com/SERV4BIZ/letsgo => ./
 
 require (
 	github.com/SERV4BIZ/gfp v0.0.0-20210302062410-766954048867

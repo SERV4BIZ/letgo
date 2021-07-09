@@ -1,4 +1,4 @@
-package letgoapp
+package letsgoapp
 
 import (
 	"fmt"
@@ -9,15 +9,15 @@ import (
 
 	"github.com/SERV4BIZ/gfp/collection"
 	"github.com/SERV4BIZ/gfp/jsons"
-	"github.com/SERV4BIZ/letgo/global"
-	"github.com/SERV4BIZ/letgo/utility"
+	"github.com/SERV4BIZ/letsgo/global"
+	"github.com/SERV4BIZ/letsgo/utility"
 )
 
 // Listen is begin work
 func Listen(port int) {
-	jsoConfig, errConfig := utility.GetConfig("letgo")
+	jsoConfig, errConfig := utility.GetConfig("letsgo")
 	if errConfig != nil {
-		panic(fmt.Sprint("Can not load config letgo.json file [ ", errConfig, " ]"))
+		panic(fmt.Sprint("Can not load config letsgo.json file [ ", errConfig, " ]"))
 	}
 
 	if port <= 0 {
