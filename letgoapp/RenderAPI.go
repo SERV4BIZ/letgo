@@ -12,6 +12,7 @@ import (
 
 // APINotFound is render api not found
 func APINotFound(rep *global.Request) {
+	rep.Response.Header().Set("Content-Type", "application/json")
 	jsoResult := jsons.JSONObjectFactory()
 	jsoResult.PutInt("status", 0)
 	jsoResult.PutString("txt_msg", "API NOT FOUND")
