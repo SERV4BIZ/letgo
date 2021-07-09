@@ -9,7 +9,7 @@
 
 	)
 
-	func letsgoAPI() {
+	func LetsGoAPI() {
 		letsgoapp.RegisterAPIHandler = func(rep *global.Request) {
 			rep.AddAPI("networks/Ping",networks.Ping)
 

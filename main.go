@@ -151,7 +151,7 @@ func main() {
 		` + txtImportBuffer + `
 	)
 
-	func letsgoAPI() {
+	func LetsGoAPI() {
 		letsgoapp.RegisterAPIHandler = func(rep *global.Request) {
 			` + txtAddAPIBuffer + `
 		}
